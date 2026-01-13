@@ -7,7 +7,7 @@ interface LoginPageProps {
 }
 
 const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('admin@nonecode.site');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -26,65 +26,65 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
 
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden bg-white font-sans">
-      {/* Background Blurs */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#fdf2ff] rounded-full blur-[120px] -z-10 translate-x-1/3 -translate-y-1/3 opacity-60"></div>
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#f0f7ff] rounded-full blur-[100px] -z-10 -translate-x-1/3 translate-y-1/3 opacity-60"></div>
+      {/* Decorative Blurs */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#fdf2ff] rounded-full blur-[140px] -z-10 translate-x-1/3 -translate-y-1/3 opacity-50"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#f0f7ff] rounded-full blur-[120px] -z-10 -translate-x-1/3 translate-y-1/3 opacity-50"></div>
 
       {/* Navigation / Header */}
-      <header className="px-8 pt-8 md:px-24 md:pt-12 shrink-0">
+      <header className="px-8 pt-8 md:px-24 md:pt-16 shrink-0">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 flex items-center justify-center bg-[#673DE6] rounded-lg">
-            <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div className="w-12 h-12 flex items-center justify-center bg-[#673DE6] rounded-xl shadow-lg shadow-purple-200">
+            <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 8V32M28 8V32M12 20H28" stroke="white" strokeWidth="6" strokeLinecap="round" />
             </svg>
           </div>
-          <span className="text-2xl font-black tracking-tighter uppercase text-gray-900">Hostinger</span>
+          <span className="text-3xl font-black tracking-tighter uppercase text-gray-900">Hostinger</span>
         </div>
       </header>
 
-      {/* Main Hero & Login Section */}
-      <main className="flex-1 flex flex-col md:flex-row px-8 md:px-24 py-12 md:py-20 gap-16 md:items-center">
-        {/* Left Column: Form */}
-        <div className="w-full md:w-[420px] shrink-0">
-          <h1 className="text-[28px] font-extrabold mb-10 text-gray-900 tracking-tight">Log in to Hostinger Mail</h1>
+      {/* Main Content Area */}
+      <main className="flex-1 flex flex-col md:flex-row px-8 md:px-24 py-12 md:py-24 gap-20 md:items-center">
+        {/* Login Form Column */}
+        <div className="w-full md:w-[460px] shrink-0 bg-white">
+          <h1 className="text-3xl md:text-4xl font-extrabold mb-10 text-gray-900 tracking-tight">Log in to Hostinger Mail</h1>
           
           <form onSubmit={handleSubmit} className="space-y-6">
             {error && (
-              <div className="p-4 bg-red-50 border border-red-100 text-red-700 text-sm font-medium rounded-xl flex items-center gap-2 animate-in fade-in slide-in-from-top-2 duration-200">
-                <AlertCircle size={18} />
+              <div className="p-4 bg-red-50 border border-red-100 text-red-700 text-sm font-bold rounded-2xl flex items-center gap-3 animate-in fade-in slide-in-from-top-2 duration-200">
+                <AlertCircle size={20} className="shrink-0" />
                 {error}
               </div>
             )}
 
-            <div>
-              <label className="block text-sm font-bold mb-2 text-gray-900">Email address</label>
+            <div className="space-y-2">
+              <label className="block text-sm font-extrabold text-gray-900">Email address</label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-4 bg-gray-900 text-white border border-gray-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#673DE6] focus:border-transparent transition-all placeholder-gray-500 font-medium"
+                className="w-full px-5 py-4 bg-[#111827] text-white border border-gray-800 rounded-2xl focus:outline-none focus:ring-4 focus:ring-purple-500/20 focus:border-[#673DE6] transition-all placeholder-gray-500 font-bold"
                 placeholder="Enter your email"
                 required
               />
             </div>
 
-            <div className="relative">
-              <label className="block text-sm font-bold mb-2 text-gray-900">Password</label>
+            <div className="space-y-2">
+              <label className="block text-sm font-extrabold text-gray-900">Password</label>
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-4 bg-gray-900 text-white border border-gray-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#673DE6] focus:border-transparent transition-all placeholder-gray-500 font-medium"
+                  className="w-full px-5 py-4 bg-[#111827] text-white border border-gray-800 rounded-2xl focus:outline-none focus:ring-4 focus:ring-purple-500/20 focus:border-[#673DE6] transition-all placeholder-gray-500 font-bold"
                   placeholder="Password"
                   required
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                  className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
                 >
-                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                  {showPassword ? <EyeOff size={22} /> : <Eye size={22} />}
                 </button>
               </div>
             </div>
@@ -95,33 +95,33 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
 
             <button
               type="submit"
-              className="w-full py-4 bg-[#673DE6] text-white font-bold text-lg rounded-xl hover:bg-[#572ee1] active:scale-[0.98] transition-all shadow-lg shadow-purple-100"
+              className="w-full py-5 bg-[#673DE6] text-white font-black text-xl rounded-2xl hover:bg-[#572ee1] active:scale-[0.98] transition-all shadow-xl shadow-purple-500/20"
             >
               Login
             </button>
           </form>
 
-          <div className="mt-12 space-y-4 hidden">
-            <p className="text-sm text-gray-500 font-medium">
-              Switch to old <a href="#" className="underline text-gray-700 hover:text-[#673DE6]">Webmail platform.</a>
+          <div className="mt-12 space-y-4">
+            <p className="text-sm text-gray-400 font-bold">
+              Switch to old <a href="#" className="underline text-gray-600 hover:text-[#673DE6] transition-colors">Webmail platform.</a>
             </p>
-            <p className="text-sm text-gray-500 font-medium">
-              Don't have an email account? <a href="#" className="underline text-gray-700 hover:text-[#673DE6]">See email plans.</a>
+            <p className="text-sm text-gray-400 font-bold">
+              Don't have an email account? <a href="#" className="underline text-gray-600 hover:text-[#673DE6] transition-colors">See email plans.</a>
             </p>
           </div>
         </div>
 
-        {/* Right Column: Marketing Content */}
+        {/* Marketing/Hero Column */}
         <div className="hidden md:block flex-1 max-w-2xl">
-          <h2 className="text-6xl font-black leading-[1.1] mb-8 tracking-tight text-gray-900">
+          <h2 className="text-7xl font-black leading-[1.05] mb-10 tracking-tighter text-gray-900">
             Professional email,<br />
             <span className="ai-gradient-text">powered by AI</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-12 leading-relaxed font-medium">
+          <p className="text-2xl text-gray-500 mb-14 leading-relaxed font-semibold">
             Secure, reliable, and built for ease — everything you need from business email.
           </p>
 
-          <ul className="space-y-6">
+          <ul className="space-y-8">
             {[
               "Create a branded email (you@yourdomain.com)",
               "Search, summarize, and write emails with AI",
@@ -129,32 +129,32 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
               "Use with Hostinger Mail, Gmail, Outlook, and more",
               "Contact support anytime, 24/7"
             ].map((feature, idx) => (
-              <li key={idx} className="flex items-start gap-4 animate-in slide-in-from-right duration-500" style={{ animationDelay: `${idx * 100}ms` }}>
-                <div className="mt-1 shrink-0 w-6 h-6 rounded-full bg-[#00D09C] flex items-center justify-center">
-                  <Check className="text-white" size={16} strokeWidth={4} />
+              <li key={idx} className="flex items-start gap-5 animate-fade-in" style={{ animationDelay: `${idx * 150}ms` }}>
+                <div className="mt-1 shrink-0 w-7 h-7 rounded-full bg-[#00D09C] flex items-center justify-center shadow-lg shadow-green-100">
+                  <Check className="text-white" size={18} strokeWidth={4} />
                 </div>
-                <span className="text-gray-800 font-semibold text-lg">{feature}</span>
+                <span className="text-gray-800 font-bold text-xl">{feature}</span>
               </li>
             ))}
           </ul>
         </div>
       </main>
 
-      {/* Trustpilot Footer */}
+      {/* Trustpilot Review Section */}
       <footer className="px-8 md:px-24 pb-12 flex flex-col md:flex-row items-end justify-end mt-auto">
-        <div className="flex items-center gap-4 bg-white/80 backdrop-blur p-3 rounded-2xl shadow-sm border border-gray-100">
-          <span className="font-bold text-gray-900 text-lg">Excellent</span>
-          <div className="flex gap-1">
+        <div className="flex items-center gap-5 bg-white/90 backdrop-blur-xl p-4 rounded-2xl shadow-xl border border-gray-100">
+          <span className="font-black text-gray-900 text-xl tracking-tight">Excellent</span>
+          <div className="flex gap-1.5">
             {[1, 2, 3, 4, 5].map((s) => (
-              <div key={s} className="bg-[#00b67a] p-1 rounded-sm">
-                <Star fill="white" color="white" size={14} />
+              <div key={s} className="bg-[#00b67a] p-1.5 rounded-sm">
+                <Star fill="white" color="white" size={16} />
               </div>
             ))}
           </div>
-          <div className="flex items-center gap-2">
-            <span className="underline font-bold text-gray-600 text-sm">60,412 reviews on</span>
-            <div className="flex items-center gap-1 font-bold text-gray-900 text-sm">
-              <Star fill="#00b67a" color="#00b67a" size={18} />
+          <div className="flex items-center gap-2.5">
+            <span className="underline font-bold text-gray-500 text-base">60,412 reviews on</span>
+            <div className="flex items-center gap-1.5 font-black text-gray-900 text-lg tracking-tight">
+              <Star fill="#00b67a" color="#00b67a" size={24} />
               Trustpilot
             </div>
           </div>
