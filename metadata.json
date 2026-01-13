@@ -1,0 +1,8 @@
+{
+  "name": "Hostinger AI Mail Manager",
+  "description": "A professional email management platform featuring an AI-powered interface for summarizing, writing, and organizing emails.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
