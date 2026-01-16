@@ -19,7 +19,7 @@ const INITIAL_ACCOUNTS: EmailAccount[] = [
   {
     id: '2',
     name: 'Peh Kim Hock',
-    email: 'kimhock.peh@sjamperak.org.my',
+    email: 'centralfinance@sjamperak.org.my',
     status: 'Active',
     usage: '0 GB / 10 GB',
     createdDate: '3 Jan 2026'
